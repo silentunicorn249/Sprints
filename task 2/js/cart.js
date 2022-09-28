@@ -1,6 +1,5 @@
 "use strict";
 let products = [];
-let avProducts = ["product-1", "product-2"];
 
 const addProduct = function () {
   const productName = document.getElementById("product-name").value;
@@ -105,25 +104,26 @@ const calculateShipping = function () {
 
 const validateInputs = function (productName, price, quantity) {
   if (productName == "" || price == "" || quantity == "") {
-    console.log("1");
     return false;
   }
-  if (!isNaN(Number(productName))) {
-    console.log("2");
-    return false;
-  }
+
   if (isNaN(Number(price)) || isNaN(Number(quantity))) {
-    console.log("3");
     return false;
   }
   if (!Number.isInteger(Number(quantity))) {
-    console.log("4");
     return false;
   }
-  if(!avProducts.includes(productName)){
+  let con = true;
+  for(let i=1;i<10;i++){
+    if("product-"+i == productName){
+      con = false;
+      console.log("reached here");
+    }
+  }
+  if(con){
     return false;
   }
-  console.log("reached");
+
   return true;
 };
 
