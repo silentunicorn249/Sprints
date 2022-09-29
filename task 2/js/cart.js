@@ -113,6 +113,9 @@ const validateInputs = function (productName, price, quantity) {
   if (!Number.isInteger(Number(quantity))) {
     return false;
   }
+  if (Number(quantity) < 0 || Number(price) < 0){
+    return false;
+  }
   let con = true;
   for(let i=1;i<10;i++){
     if("product-"+i == productName){
