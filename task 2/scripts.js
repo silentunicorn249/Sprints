@@ -80,8 +80,3 @@ const getHoroscopeName = function (day, month) {
     return "Sagittarius";
   }
 };
-
-const calculateTax = function (amount) {
-  return amount * 0.14;
-};
-//const getHoroscope = () => {};
